@@ -25,7 +25,7 @@ class TabBarController: UITabBarController {
 private extension TabBarController {
     func setubTabs() {
         picturesList.navigationController.tabBarItem = UITabBarItem(title: "Explore", image: UIImage(named: "explore"), tag: 1)
-        favoritesList.navigationController.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(named: "favourite"), tag: 2)
+        favoritesList.navigationController.tabBarItem = UITabBarItem(title: "Favorites", image: UIImage(named: "favourite"), tag: 2)
         
         setViewControllers([picturesList.navigationController, favoritesList.navigationController], animated: true)
         tabBar.tintColor = .systemPink
