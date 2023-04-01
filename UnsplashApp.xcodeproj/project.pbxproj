@@ -80,15 +80,39 @@
 		C65FFFE129D83C3600A8CFDC /* UnsplashApp */ = {
 			isa = PBXGroup;
 			children = (
-				C65FFFE229D83C3600A8CFDC /* AppDelegate.swift */,
-				C65FFFE429D83C3600A8CFDC /* SceneDelegate.swift */,
-				C65FFFE629D83C3600A8CFDC /* ViewController.swift */,
-				C65FFFE829D83C3600A8CFDC /* Main.storyboard */,
-				C65FFFEB29D83C3700A8CFDC /* Assets.xcassets */,
-				C65FFFED29D83C3700A8CFDC /* LaunchScreen.storyboard */,
+				C65FFFF629D84CAC00A8CFDC /* Application */,
+				C65FFFF829D84D2300A8CFDC /* Controllers */,
+				C65FFFF729D84CD800A8CFDC /* Resources */,
 				C65FFFF029D83C3700A8CFDC /* Info.plist */,
 			);
 			path = UnsplashApp;
+			sourceTree = "<group>";
+		};
+		C65FFFF629D84CAC00A8CFDC /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C65FFFE229D83C3600A8CFDC /* AppDelegate.swift */,
+				C65FFFE429D83C3600A8CFDC /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		C65FFFF729D84CD800A8CFDC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C65FFFE829D83C3600A8CFDC /* Main.storyboard */,
+				C65FFFEB29D83C3700A8CFDC /* Assets.xcassets */,
+				C65FFFED29D83C3700A8CFDC /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C65FFFF829D84D2300A8CFDC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C65FFFE629D83C3600A8CFDC /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
