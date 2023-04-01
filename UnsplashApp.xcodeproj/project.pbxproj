@@ -15,6 +15,12 @@
 		C65F000D29D8804D00A8CFDC /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F000C29D8804D00A8CFDC /* FavoritesListViewController.swift */; };
 		C65F001129D8B13700A8CFDC /* PicturesListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F001029D8B13700A8CFDC /* PicturesListCollectionViewCell.swift */; };
 		C65F001429D8B48700A8CFDC /* UIView + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F001329D8B48700A8CFDC /* UIView + extensions.swift */; };
+		C65F001729D8BE5300A8CFDC /* UnsplashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F001629D8BE5300A8CFDC /* UnsplashModel.swift */; };
+		C65F001A29D8BEAE00A8CFDC /* ImageURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F001929D8BEAE00A8CFDC /* ImageURLs.swift */; };
+		C65F001C29D8BEC600A8CFDC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F001B29D8BEC600A8CFDC /* UserModel.swift */; };
+		C65F001E29D8BEE100A8CFDC /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F001D29D8BEE100A8CFDC /* LocationModel.swift */; };
+		C65F002029D8BF0100A8CFDC /* ProfileImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F001F29D8BF0100A8CFDC /* ProfileImageModel.swift */; };
+		C65F002229D8BF4600A8CFDC /* PresentPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F002129D8BF4600A8CFDC /* PresentPhotoModel.swift */; };
 		C65FFFE329D83C3600A8CFDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FFFE229D83C3600A8CFDC /* AppDelegate.swift */; };
 		C65FFFE529D83C3600A8CFDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FFFE429D83C3600A8CFDC /* SceneDelegate.swift */; };
 		C65FFFE729D83C3600A8CFDC /* PicturesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FFFE629D83C3600A8CFDC /* PicturesListViewController.swift */; };
@@ -36,6 +42,12 @@
 		C65F000C29D8804D00A8CFDC /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
 		C65F001029D8B13700A8CFDC /* PicturesListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesListCollectionViewCell.swift; sourceTree = "<group>"; };
 		C65F001329D8B48700A8CFDC /* UIView + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + extensions.swift"; sourceTree = "<group>"; };
+		C65F001629D8BE5300A8CFDC /* UnsplashModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashModel.swift; sourceTree = "<group>"; };
+		C65F001929D8BEAE00A8CFDC /* ImageURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLs.swift; sourceTree = "<group>"; };
+		C65F001B29D8BEC600A8CFDC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		C65F001D29D8BEE100A8CFDC /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		C65F001F29D8BF0100A8CFDC /* ProfileImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageModel.swift; sourceTree = "<group>"; };
+		C65F002129D8BF4600A8CFDC /* PresentPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentPhotoModel.swift; sourceTree = "<group>"; };
 		C65FFFDF29D83C3600A8CFDC /* UnsplashApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C65FFFE229D83C3600A8CFDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C65FFFE429D83C3600A8CFDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +142,19 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		C65F001529D8BE1E00A8CFDC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C65F001629D8BE5300A8CFDC /* UnsplashModel.swift */,
+				C65F001929D8BEAE00A8CFDC /* ImageURLs.swift */,
+				C65F001B29D8BEC600A8CFDC /* UserModel.swift */,
+				C65F001D29D8BEE100A8CFDC /* LocationModel.swift */,
+				C65F001F29D8BF0100A8CFDC /* ProfileImageModel.swift */,
+				C65F002129D8BF4600A8CFDC /* PresentPhotoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C65FFFD629D83C3500A8CFDC = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				C65FFFF629D84CAC00A8CFDC /* Application */,
+				C65F001529D8BE1E00A8CFDC /* Models */,
 				C65FFFF929D852AA00A8CFDC /* Core */,
 				C65FFFF829D84D2300A8CFDC /* Controllers */,
 				C65FFFF729D84CD800A8CFDC /* Resources */,
@@ -319,12 +345,18 @@
 				C65F000D29D8804D00A8CFDC /* FavoritesListViewController.swift in Sources */,
 				C65FFFFD29D86B2B00A8CFDC /* AppCoordinator.swift in Sources */,
 				C65F001129D8B13700A8CFDC /* PicturesListCollectionViewCell.swift in Sources */,
+				C65F001729D8BE5300A8CFDC /* UnsplashModel.swift in Sources */,
 				C65F000B29D8802900A8CFDC /* FavoritesCoordinator.swift in Sources */,
+				C65F002229D8BF4600A8CFDC /* PresentPhotoModel.swift in Sources */,
 				C65F000929D8801600A8CFDC /* FavoritesListViewFactory.swift in Sources */,
+				C65F001C29D8BEC600A8CFDC /* UserModel.swift in Sources */,
 				C65FFFFF29D86D0D00A8CFDC /* TabBarController.swift in Sources */,
 				C65FFFE329D83C3600A8CFDC /* AppDelegate.swift in Sources */,
+				C65F001A29D8BEAE00A8CFDC /* ImageURLs.swift in Sources */,
 				C65FFFE529D83C3600A8CFDC /* SceneDelegate.swift in Sources */,
+				C65F001E29D8BEE100A8CFDC /* LocationModel.swift in Sources */,
 				C65F000529D8767C00A8CFDC /* PicturesCoordinator.swift in Sources */,
+				C65F002029D8BF0100A8CFDC /* ProfileImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
