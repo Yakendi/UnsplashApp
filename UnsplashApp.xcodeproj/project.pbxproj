@@ -8,28 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		3E9113387DDE15EBB4D01060 /* Pods_UnsplashApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F8019AC18273F3DDA73503 /* Pods_UnsplashApp.framework */; };
+		C65F000229D8731400A8CFDC /* PicturesListViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F000129D8731400A8CFDC /* PicturesListViewFactory.swift */; };
+		C65F000529D8767C00A8CFDC /* PicturesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F000429D8767C00A8CFDC /* PicturesCoordinator.swift */; };
 		C65FFFE329D83C3600A8CFDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FFFE229D83C3600A8CFDC /* AppDelegate.swift */; };
 		C65FFFE529D83C3600A8CFDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FFFE429D83C3600A8CFDC /* SceneDelegate.swift */; };
-		C65FFFE729D83C3600A8CFDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FFFE629D83C3600A8CFDC /* ViewController.swift */; };
+		C65FFFE729D83C3600A8CFDC /* PicturesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FFFE629D83C3600A8CFDC /* PicturesListViewController.swift */; };
 		C65FFFEC29D83C3700A8CFDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C65FFFEB29D83C3700A8CFDC /* Assets.xcassets */; };
 		C65FFFEF29D83C3700A8CFDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C65FFFED29D83C3700A8CFDC /* LaunchScreen.storyboard */; };
 		C65FFFFB29D852BC00A8CFDC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FFFFA29D852BC00A8CFDC /* Coordinator.swift */; };
 		C65FFFFD29D86B2B00A8CFDC /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FFFFC29D86B2B00A8CFDC /* AppCoordinator.swift */; };
+		C65FFFFF29D86D0D00A8CFDC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FFFFE29D86D0D00A8CFDC /* TabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		25D57392D018528121BDD82C /* Pods-UnsplashApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashApp.debug.xcconfig"; path = "Target Support Files/Pods-UnsplashApp/Pods-UnsplashApp.debug.xcconfig"; sourceTree = "<group>"; };
 		6CF25BBCB6996D61843245CA /* Pods-UnsplashApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashApp.release.xcconfig"; path = "Target Support Files/Pods-UnsplashApp/Pods-UnsplashApp.release.xcconfig"; sourceTree = "<group>"; };
 		B9F8019AC18273F3DDA73503 /* Pods_UnsplashApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnsplashApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C65F000129D8731400A8CFDC /* PicturesListViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesListViewFactory.swift; sourceTree = "<group>"; };
+		C65F000429D8767C00A8CFDC /* PicturesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesCoordinator.swift; sourceTree = "<group>"; };
 		C65FFFDF29D83C3600A8CFDC /* UnsplashApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C65FFFE229D83C3600A8CFDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C65FFFE429D83C3600A8CFDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C65FFFE629D83C3600A8CFDC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C65FFFE629D83C3600A8CFDC /* PicturesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesListViewController.swift; sourceTree = "<group>"; };
 		C65FFFEB29D83C3700A8CFDC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C65FFFEE29D83C3700A8CFDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C65FFFF029D83C3700A8CFDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C65FFFFA29D852BC00A8CFDC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C65FFFFC29D86B2B00A8CFDC /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		C65FFFFE29D86D0D00A8CFDC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,24 @@
 				6CF25BBCB6996D61843245CA /* Pods-UnsplashApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C65F000029D8724400A8CFDC /* Pictures Section */ = {
+			isa = PBXGroup;
+			children = (
+				C65F000129D8731400A8CFDC /* PicturesListViewFactory.swift */,
+				C65F000429D8767C00A8CFDC /* PicturesCoordinator.swift */,
+				C65F000329D8731F00A8CFDC /* View */,
+			);
+			path = "Pictures Section";
+			sourceTree = "<group>";
+		};
+		C65F000329D8731F00A8CFDC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C65FFFE629D83C3600A8CFDC /* PicturesListViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C65FFFD629D83C3500A8CFDC = {
@@ -113,7 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				C65FFFFC29D86B2B00A8CFDC /* AppCoordinator.swift */,
-				C65FFFE629D83C3600A8CFDC /* ViewController.swift */,
+				C65FFFFE29D86D0D00A8CFDC /* TabBarController.swift */,
+				C65F000029D8724400A8CFDC /* Pictures Section */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -241,10 +266,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C65FFFFB29D852BC00A8CFDC /* Coordinator.swift in Sources */,
-				C65FFFE729D83C3600A8CFDC /* ViewController.swift in Sources */,
+				C65FFFE729D83C3600A8CFDC /* PicturesListViewController.swift in Sources */,
+				C65F000229D8731400A8CFDC /* PicturesListViewFactory.swift in Sources */,
 				C65FFFFD29D86B2B00A8CFDC /* AppCoordinator.swift in Sources */,
+				C65FFFFF29D86D0D00A8CFDC /* TabBarController.swift in Sources */,
 				C65FFFE329D83C3600A8CFDC /* AppDelegate.swift in Sources */,
 				C65FFFE529D83C3600A8CFDC /* SceneDelegate.swift in Sources */,
+				C65F000529D8767C00A8CFDC /* PicturesCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,15 +9,16 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     
+    // MARK: - Public properties
     var window: UIWindow
-    var navigationController: UINavigationController
+    var navigationController = UINavigationController()
     
     // MARK: - Constructor
     init(window: UIWindow) {
         self.window = window
     }
     
-    
+    // MARK: - Life cycle
     func start() {
         let controller = TabBarController()
         
