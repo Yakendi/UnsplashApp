@@ -11,6 +11,7 @@ class TabBarController: UITabBarController {
     
     // MARK: - Public properties
     let picturesList = PicturesCoordinator()
+    let favoritesList = FavoritesCoordinator()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -24,8 +25,9 @@ class TabBarController: UITabBarController {
 private extension TabBarController {
     func setubTabs() {
         picturesList.navigationController.tabBarItem = UITabBarItem(title: "Explore", image: UIImage(named: "explore"), tag: 1)
+        favoritesList.navigationController.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(named: "favourite"), tag: 2)
         
-        setViewControllers([picturesList.navigationController], animated: true)
+        setViewControllers([picturesList.navigationController, favoritesList.navigationController], animated: true)
         tabBar.tintColor = .systemPink
     }
 }
