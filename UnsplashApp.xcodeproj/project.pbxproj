@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E9113387DDE15EBB4D01060 /* Pods_UnsplashApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F8019AC18273F3DDA73503 /* Pods_UnsplashApp.framework */; };
+		C604481929D9ADEF004A8F0E /* FavoritesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604481829D9ADEF004A8F0E /* FavoritesListTableViewCell.swift */; };
 		C65F000229D8731400A8CFDC /* PicturesListViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F000129D8731400A8CFDC /* PicturesListViewFactory.swift */; };
 		C65F000529D8767C00A8CFDC /* PicturesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F000429D8767C00A8CFDC /* PicturesCoordinator.swift */; };
 		C65F000929D8801600A8CFDC /* FavoritesListViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F000829D8801600A8CFDC /* FavoritesListViewFactory.swift */; };
@@ -35,6 +36,7 @@
 		25D57392D018528121BDD82C /* Pods-UnsplashApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashApp.debug.xcconfig"; path = "Target Support Files/Pods-UnsplashApp/Pods-UnsplashApp.debug.xcconfig"; sourceTree = "<group>"; };
 		6CF25BBCB6996D61843245CA /* Pods-UnsplashApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashApp.release.xcconfig"; path = "Target Support Files/Pods-UnsplashApp/Pods-UnsplashApp.release.xcconfig"; sourceTree = "<group>"; };
 		B9F8019AC18273F3DDA73503 /* Pods_UnsplashApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnsplashApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C604481829D9ADEF004A8F0E /* FavoritesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListTableViewCell.swift; sourceTree = "<group>"; };
 		C65F000129D8731400A8CFDC /* PicturesListViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesListViewFactory.swift; sourceTree = "<group>"; };
 		C65F000429D8767C00A8CFDC /* PicturesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesCoordinator.swift; sourceTree = "<group>"; };
 		C65F000829D8801600A8CFDC /* FavoritesListViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewFactory.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C604481729D9ADD0004A8F0E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C604481829D9ADEF004A8F0E /* FavoritesListTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		C65F000029D8724400A8CFDC /* Pictures Section */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +131,7 @@
 		C65F000729D87FD400A8CFDC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C604481729D9ADD0004A8F0E /* Cell */,
 				C65F000C29D8804D00A8CFDC /* FavoritesListViewController.swift */,
 			);
 			path = View;
@@ -356,6 +367,7 @@
 				C65FFFE529D83C3600A8CFDC /* SceneDelegate.swift in Sources */,
 				C65F001E29D8BEE100A8CFDC /* LocationModel.swift in Sources */,
 				C65F000529D8767C00A8CFDC /* PicturesCoordinator.swift in Sources */,
+				C604481929D9ADEF004A8F0E /* FavoritesListTableViewCell.swift in Sources */,
 				C65F002029D8BF0100A8CFDC /* ProfileImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
