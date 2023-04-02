@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3E9113387DDE15EBB4D01060 /* Pods_UnsplashApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F8019AC18273F3DDA73503 /* Pods_UnsplashApp.framework */; };
 		C604481929D9ADEF004A8F0E /* FavoritesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604481829D9ADEF004A8F0E /* FavoritesListTableViewCell.swift */; };
+		C604481C29D9C103004A8F0E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604481B29D9C103004A8F0E /* NetworkManager.swift */; };
+		C604481E29D9C11D004A8F0E /* NetworkEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604481D29D9C11D004A8F0E /* NetworkEndpoints.swift */; };
+		C604482029D9C12C004A8F0E /* NetworkErrorTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604481F29D9C12C004A8F0E /* NetworkErrorTypes.swift */; };
+		C604482229D9C536004A8F0E /* String + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604482129D9C536004A8F0E /* String + extensions.swift */; };
 		C65F000229D8731400A8CFDC /* PicturesListViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F000129D8731400A8CFDC /* PicturesListViewFactory.swift */; };
 		C65F000529D8767C00A8CFDC /* PicturesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F000429D8767C00A8CFDC /* PicturesCoordinator.swift */; };
 		C65F000929D8801600A8CFDC /* FavoritesListViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F000829D8801600A8CFDC /* FavoritesListViewFactory.swift */; };
@@ -37,6 +41,10 @@
 		6CF25BBCB6996D61843245CA /* Pods-UnsplashApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashApp.release.xcconfig"; path = "Target Support Files/Pods-UnsplashApp/Pods-UnsplashApp.release.xcconfig"; sourceTree = "<group>"; };
 		B9F8019AC18273F3DDA73503 /* Pods_UnsplashApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnsplashApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C604481829D9ADEF004A8F0E /* FavoritesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListTableViewCell.swift; sourceTree = "<group>"; };
+		C604481B29D9C103004A8F0E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C604481D29D9C11D004A8F0E /* NetworkEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndpoints.swift; sourceTree = "<group>"; };
+		C604481F29D9C12C004A8F0E /* NetworkErrorTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorTypes.swift; sourceTree = "<group>"; };
+		C604482129D9C536004A8F0E /* String + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + extensions.swift"; sourceTree = "<group>"; };
 		C65F000129D8731400A8CFDC /* PicturesListViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesListViewFactory.swift; sourceTree = "<group>"; };
 		C65F000429D8767C00A8CFDC /* PicturesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesCoordinator.swift; sourceTree = "<group>"; };
 		C65F000829D8801600A8CFDC /* FavoritesListViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewFactory.swift; sourceTree = "<group>"; };
@@ -99,6 +107,16 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		C604481A29D9C0ED004A8F0E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C604481B29D9C103004A8F0E /* NetworkManager.swift */,
+				C604481D29D9C11D004A8F0E /* NetworkEndpoints.swift */,
+				C604481F29D9C12C004A8F0E /* NetworkErrorTypes.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		C65F000029D8724400A8CFDC /* Pictures Section */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				C65F001329D8B48700A8CFDC /* UIView + extensions.swift */,
+				C604482129D9C536004A8F0E /* String + extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -189,6 +208,7 @@
 			children = (
 				C65FFFF629D84CAC00A8CFDC /* Application */,
 				C65F001529D8BE1E00A8CFDC /* Models */,
+				C604481A29D9C0ED004A8F0E /* Network */,
 				C65FFFF929D852AA00A8CFDC /* Core */,
 				C65FFFF829D84D2300A8CFDC /* Controllers */,
 				C65FFFF729D84CD800A8CFDC /* Resources */,
@@ -352,7 +372,9 @@
 				C65FFFFB29D852BC00A8CFDC /* Coordinator.swift in Sources */,
 				C65F001429D8B48700A8CFDC /* UIView + extensions.swift in Sources */,
 				C65FFFE729D83C3600A8CFDC /* PicturesListViewController.swift in Sources */,
+				C604481C29D9C103004A8F0E /* NetworkManager.swift in Sources */,
 				C65F000229D8731400A8CFDC /* PicturesListViewFactory.swift in Sources */,
+				C604482029D9C12C004A8F0E /* NetworkErrorTypes.swift in Sources */,
 				C65F000D29D8804D00A8CFDC /* FavoritesListViewController.swift in Sources */,
 				C65FFFFD29D86B2B00A8CFDC /* AppCoordinator.swift in Sources */,
 				C65F001129D8B13700A8CFDC /* PicturesListCollectionViewCell.swift in Sources */,
@@ -369,6 +391,8 @@
 				C65F000529D8767C00A8CFDC /* PicturesCoordinator.swift in Sources */,
 				C604481929D9ADEF004A8F0E /* FavoritesListTableViewCell.swift in Sources */,
 				C65F002029D8BF0100A8CFDC /* ProfileImageModel.swift in Sources */,
+				C604482229D9C536004A8F0E /* String + extensions.swift in Sources */,
+				C604481E29D9C11D004A8F0E /* NetworkEndpoints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
