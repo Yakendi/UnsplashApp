@@ -25,3 +25,10 @@ class PicturesCoordinator: Coordinator {
         self.navigationController.setViewControllers([controller], animated: false)
     }
 }
+
+extension PicturesCoordinator: PresentPhotoDelegate {
+    func presentPhoto() {
+        let detailPictureViewController = DetailPictureViewController()
+        self.navigationController.present(detailPictureViewController, animated: true)
+    }
+}

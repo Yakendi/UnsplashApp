@@ -24,6 +24,11 @@ class FavoritesCoordinator: Coordinator {
         let controller = FavoritesListViewFactory.create()
         self.navigationController.setViewControllers([controller], animated: false)
     }
-    
-    
+}
+
+extension FavoritesCoordinator: PresentPhotoDelegate {
+    func presentPhoto() {
+        let detailPictureViewController = DetailPictureViewController()
+        self.navigationController.present(detailPictureViewController, animated: true)
+    }
 }
