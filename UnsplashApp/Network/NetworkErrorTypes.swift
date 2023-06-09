@@ -10,6 +10,7 @@ import Foundation
 enum NetworkErrorTypes: Error {
     case invalidURL
     case emptyData
+    case nonHTTPResponse
     case error(error: Error)
 }
 
@@ -20,6 +21,8 @@ extension NetworkErrorTypes: LocalizedError {
             return NSLocalizedString("Невалидынй url.", comment: "Loading error")
         case .emptyData:
             return NSLocalizedString("Нет данных.", comment: "JSON parse error")
+        case .nonHTTPResponse:
+            return NSLocalizedString("Ошибка сервера", comment: "HTTPResponse error")
         case .error(let error):
             return NSLocalizedString("\(error.localizedDescription)", comment: "Error")
         }
