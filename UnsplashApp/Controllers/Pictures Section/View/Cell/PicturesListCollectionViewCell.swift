@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class PicturesListCollectionViewCell: UICollectionViewCell {
     
@@ -38,6 +39,11 @@ class PicturesListCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         
         self.imageView.image = nil
+    }
+    
+    // MARK: - Configurator
+    func configure(_ model: ImageURLs) {
+        imageView.kf.setImage(with: URL(string: model.thumb ?? ""))
     }
 }
 

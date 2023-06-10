@@ -7,4 +7,5 @@ target 'UnsplashApp' do
 
   # Pods for UnsplashApp
 pod 'SnapKit'
+pod 'Kingfisher'
 end

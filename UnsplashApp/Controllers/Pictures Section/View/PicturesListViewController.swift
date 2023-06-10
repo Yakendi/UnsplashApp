@@ -10,6 +10,13 @@ import SnapKit
 
 class PicturesListViewController: UIViewController {
     
+    // MARK: - Public
+    var unsplashData: [ImageURLs] = []
+    weak var delegate: Presenter?
+    
+    // MARK: - Private
+    private let photoGalleryManager = PhotoGalleryManager.shared
+    
     // MARK: - UI
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -36,34 +43,44 @@ class PicturesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setup()
+        setupViews()
+        getImages()
+    }
+    
+    // MARK: - Network
+    func getImages() {
+        photoGalleryManager.randomImagesList { [weak self] imagesArray in
+            guard let self = self else { return }
+            
+            self.unsplashData = imagesArray
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+                self.activityIndicator.stopAnimating()
+            }
+        }
     }
 }
 
 // MARK: - Setup views
 private extension PicturesListViewController {
-    func setup() {
-        setupViews()
-        setupConstraints()
-    }
-    
+ 
     func setupViews() {
-        view.addSubviews(collectionView, searchBar, activityIndicator)
         view.backgroundColor = .systemBackground
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        navigationItem.titleView = searchBar
-//        activityIndicator.startAnimating()
-    }
-    
-    func setupConstraints() {
+        view.addSubviews(collectionView)
         collectionView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
+        view.addSubview(activityIndicator)
         activityIndicator.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
+        activityIndicator.startAnimating()
+        
+        navigationItem.titleView = searchBar
     }
 }
 
@@ -71,14 +88,24 @@ private extension PicturesListViewController {
 extension PicturesListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20
+        unsplashData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PicturesListCollectionViewCell.identifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PicturesListCollectionViewCell.identifier, for: indexPath) as! PicturesListCollectionViewCell
         cell.backgroundColor = .systemGray6
+        let model = unsplashData[indexPath.row]
+        cell.configure(model)
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var pictureInfoModel = photoGalleryManager.presentPhotoArray[indexPath.item]
+        
+        let selectedIsFavorite = photoGalleryManager.favoritesArray.contains {
+            return $0 == pictureInfoModel
+        }
+        pictureInfoModel.isFavorite = selectedIsFavorite
+        delegate?.presentPhoto(with: pictureInfoModel)
+    }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 struct PicturesListViewFactory {
-    static func create() -> UIViewController {
+    static func create() -> PicturesListViewController {
         let viewController = PicturesListViewController()
         
         return viewController

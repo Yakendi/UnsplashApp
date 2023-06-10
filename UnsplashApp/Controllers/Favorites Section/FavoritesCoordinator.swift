@@ -26,8 +26,8 @@ class FavoritesCoordinator: Coordinator {
     }
 }
 
-extension FavoritesCoordinator: PresentPhotoDelegate {
-    func presentPhoto() {
+extension FavoritesCoordinator: Presenter {
+    func presentPhoto(with model: PresentPhotoModel) {
         let detailPictureViewController = DetailPictureViewController()
         self.navigationController.present(detailPictureViewController, animated: true)
     }

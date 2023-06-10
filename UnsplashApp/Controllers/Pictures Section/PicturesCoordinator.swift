@@ -22,13 +22,15 @@ class PicturesCoordinator: Coordinator {
     // MARK: - Life cycle
     func start() {
         let controller = PicturesListViewFactory.create()
+        controller.delegate = self
         self.navigationController.setViewControllers([controller], animated: false)
     }
 }
 
-extension PicturesCoordinator: PresentPhotoDelegate {
-    func presentPhoto() {
+extension PicturesCoordinator: Presenter {
+    func presentPhoto(with model: PresentPhotoModel) {
         let detailPictureViewController = DetailPictureViewController()
+        detailPictureViewController.model = model
         self.navigationController.present(detailPictureViewController, animated: true)
     }
 }

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol PresentPhotoDelegate: AnyObject {
-    func presentPhoto()
+protocol Presenter: AnyObject {
+    func presentPhoto(with model: PresentPhotoModel)
 }

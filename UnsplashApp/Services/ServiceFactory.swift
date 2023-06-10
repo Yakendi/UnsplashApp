@@ -21,11 +21,11 @@ final class ServiceFactory {
     }
     
     // MARK: - Request
-    func getImages(completion: @escaping Handler<UnsplashModel>) {
+    func getImages(completion: @escaping Handler<[UnsplashModel]>) {
         networkService.makeRequest(to: .getImages(), completion: completion)
     }
     
-    func searchImages(with keyWord: String, page: Int, completion: @escaping Handler<UnsplashModel>) {
+    func searchImages(with keyWord: String, page: Int, completion: @escaping Handler<[UnsplashModel]>) {
         networkService.makeRequest(to: .searchImages(with: keyWord, page: page), completion: completion)
     }
 }

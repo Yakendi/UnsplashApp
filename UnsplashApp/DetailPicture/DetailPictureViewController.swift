@@ -7,10 +7,15 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class DetailPictureViewController: UIViewController {
-
+    
+    // MARK: - Public
+    var model: PresentPhotoModel!
+    
     // MARK: - UI
+    // images
     private var pictureImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -28,11 +33,25 @@ class DetailPictureViewController: UIViewController {
         return imageView
     }()
     
+    // labels
+    private var usernameLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        return label
+    }()
+    
+    private var instagramUsername: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemGray
+        return label
+    }()
+    
+    // buttons
     private var actionButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 10
         button.backgroundColor = .systemPink
-        button.titleLabel?.text = "Press"
+        button.setTitle("Press", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         return button
     }()
@@ -47,81 +66,83 @@ class DetailPictureViewController: UIViewController {
         button.alpha = 0.7
         button.contentHorizontalAlignment = .fill
         button.contentVerticalAlignment = .fill
+        button.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
         return button
     }()
     
-    private var usernameLabel = UILabel()
-    private var instagramUsername = UILabel()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setup()
+        
+        setupViews()
+        fillElements()
+    }
+    
+    // MARK: - Configurator
+    private func fillElements() {
+        // images
+        pictureImageView.kf.indicatorType = .activity
+        pictureImageView.kf.setImage(with: URL(string: model.image))
+        profileImageView.kf.setImage(with: URL(string: model.userAvatar))
+        
+        // labels
+        usernameLabel.text = model.userName
+        instagramUsername.text = "@\(model.instagram)"
+    }
+    
+    // MARK: - Button method
+    @objc func dismissViewController() {
+        dismiss(animated: true)
     }
 }
 
 // MARK: - Setup views
 private extension DetailPictureViewController {
-    func setup() {
-        setupViews()
-        setupConstraints()
-        fillLabels()
-    }
     
     func setupViews() {
-        view.addSubviews(pictureImageView,
-                         profileImageView,
-                         actionButton,
-                         closeButton,
-                         usernameLabel,
-                         instagramUsername)
         view.backgroundColor = .systemBackground
-    }
-    
-    func setupConstraints() {
+        
+        view.addSubviews(pictureImageView)
         pictureImageView.snp.makeConstraints {
             $0.leading.top.trailing.equalToSuperview()
             $0.height.equalToSuperview().multipliedBy(0.68)
         }
         
+        view.addSubview(profileImageView)
         profileImageView.snp.makeConstraints {
             $0.width.height.equalTo(80)
             $0.leading.equalToSuperview().offset(20)
             $0.top.equalTo(pictureImageView.snp.bottom).offset(20)
         }
         
+        view.addSubview(usernameLabel)
         usernameLabel.snp.makeConstraints {
             $0.leading.equalTo(profileImageView.snp.trailing).offset(10)
             $0.top.equalTo(pictureImageView.snp.bottom).offset(20)
             $0.trailing.equalToSuperview().offset(-16)
         }
         
+        view.addSubview(instagramUsername)
         instagramUsername.snp.makeConstraints {
             $0.leading.equalTo(profileImageView.snp.trailing).offset(10)
             $0.top.equalTo(usernameLabel.snp.bottom).offset(5)
             $0.trailing.equalToSuperview().offset(-16)
         }
         
+        view.addSubview(actionButton)
         actionButton.snp.makeConstraints {
             $0.width.equalTo(250)
-            $0.height.equalTo(50)
+            $0.height.equalTo(55)
             $0.centerX.equalToSuperview()
             $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-10)
         }
         
+        view.addSubview(closeButton)
         closeButton.snp.makeConstraints {
             $0.height.width.equalTo(30)
             $0.top.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().offset(-16)
         }
-    }
-    
-    func fillLabels() {
-        usernameLabel.text = "Username"
-        usernameLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        
-        instagramUsername.text = "@instagram"
-        instagramUsername.textColor = .systemGray
     }
 }

@@ -14,7 +14,7 @@
 		C604482029D9C12C004A8F0E /* NetworkErrorTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604481F29D9C12C004A8F0E /* NetworkErrorTypes.swift */; };
 		C604482229D9C536004A8F0E /* String + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604482129D9C536004A8F0E /* String + extensions.swift */; };
 		C604482529DC26EA004A8F0E /* DetailPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604482429DC26EA004A8F0E /* DetailPictureViewController.swift */; };
-		C604482929DC39B2004A8F0E /* PresentPhotoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604482829DC39B2004A8F0E /* PresentPhotoDelegate.swift */; };
+		C604482929DC39B2004A8F0E /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604482829DC39B2004A8F0E /* Presenter.swift */; };
 		C65F000229D8731400A8CFDC /* PicturesListViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F000129D8731400A8CFDC /* PicturesListViewFactory.swift */; };
 		C65F000529D8767C00A8CFDC /* PicturesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F000429D8767C00A8CFDC /* PicturesCoordinator.swift */; };
 		C65F000929D8801600A8CFDC /* FavoritesListViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F000829D8801600A8CFDC /* FavoritesListViewFactory.swift */; };
@@ -37,6 +37,7 @@
 		C65FFFFD29D86B2B00A8CFDC /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FFFFC29D86B2B00A8CFDC /* AppCoordinator.swift */; };
 		C65FFFFF29D86D0D00A8CFDC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65FFFFE29D86D0D00A8CFDC /* TabBarController.swift */; };
 		C6A1E1C22A33B19100BD5B9E /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1E1C12A33B19100BD5B9E /* ServiceFactory.swift */; };
+		C6A1E1CA2A3474B300BD5B9E /* PhotoGalleryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1E1C92A3474B300BD5B9E /* PhotoGalleryManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +50,7 @@
 		C604481F29D9C12C004A8F0E /* NetworkErrorTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorTypes.swift; sourceTree = "<group>"; };
 		C604482129D9C536004A8F0E /* String + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + extensions.swift"; sourceTree = "<group>"; };
 		C604482429DC26EA004A8F0E /* DetailPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPictureViewController.swift; sourceTree = "<group>"; };
-		C604482829DC39B2004A8F0E /* PresentPhotoDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentPhotoDelegate.swift; sourceTree = "<group>"; };
+		C604482829DC39B2004A8F0E /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		C65F000129D8731400A8CFDC /* PicturesListViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesListViewFactory.swift; sourceTree = "<group>"; };
 		C65F000429D8767C00A8CFDC /* PicturesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesCoordinator.swift; sourceTree = "<group>"; };
 		C65F000829D8801600A8CFDC /* FavoritesListViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewFactory.swift; sourceTree = "<group>"; };
@@ -74,6 +75,7 @@
 		C65FFFFC29D86B2B00A8CFDC /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C65FFFFE29D86D0D00A8CFDC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C6A1E1C12A33B19100BD5B9E /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
+		C6A1E1C92A3474B300BD5B9E /* PhotoGalleryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 				C65F001529D8BE1E00A8CFDC /* Models */,
 				C604481A29D9C0ED004A8F0E /* Network */,
 				C6A1E1C02A33B17300BD5B9E /* Services */,
+				C6A1E1C82A34749B00BD5B9E /* Manager */,
 				C65FFFF929D852AA00A8CFDC /* Core */,
 				C65FFFF829D84D2300A8CFDC /* Controllers */,
 				C604482329DC26B4004A8F0E /* DetailPicture */,
@@ -256,7 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				C65FFFFC29D86B2B00A8CFDC /* AppCoordinator.swift */,
-				C604482829DC39B2004A8F0E /* PresentPhotoDelegate.swift */,
+				C604482829DC39B2004A8F0E /* Presenter.swift */,
 				C65FFFFE29D86D0D00A8CFDC /* TabBarController.swift */,
 				C65F000029D8724400A8CFDC /* Pictures Section */,
 				C65F000629D87FBA00A8CFDC /* Favorites Section */,
@@ -278,6 +281,14 @@
 				C6A1E1C12A33B19100BD5B9E /* ServiceFactory.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		C6A1E1C82A34749B00BD5B9E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C6A1E1C92A3474B300BD5B9E /* PhotoGalleryManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,12 +405,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6A1E1CA2A3474B300BD5B9E /* PhotoGalleryManager.swift in Sources */,
 				C65FFFFB29D852BC00A8CFDC /* Coordinator.swift in Sources */,
 				C65F001429D8B48700A8CFDC /* UIView + extensions.swift in Sources */,
 				C65FFFE729D83C3600A8CFDC /* PicturesListViewController.swift in Sources */,
 				C604481C29D9C103004A8F0E /* NetworkService.swift in Sources */,
 				C65F000229D8731400A8CFDC /* PicturesListViewFactory.swift in Sources */,
-				C604482929DC39B2004A8F0E /* PresentPhotoDelegate.swift in Sources */,
+				C604482929DC39B2004A8F0E /* Presenter.swift in Sources */,
 				C604482029D9C12C004A8F0E /* NetworkErrorTypes.swift in Sources */,
 				C65F000D29D8804D00A8CFDC /* FavoritesListViewController.swift in Sources */,
 				C65FFFFD29D86B2B00A8CFDC /* AppCoordinator.swift in Sources */,
