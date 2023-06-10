@@ -27,10 +27,21 @@ extension Endpoint {
 extension Endpoint {
     static func getImages() -> Self {
         Endpoint(
-            path: "photos/random/",
+            path: "/photos/random/",
             queryItems: [
                 URLQueryItem(name: "client_id", value: "SR06pjmvFFAczVYEUE0htljhCG34JbLATNtVP5jrXpA"),
                 URLQueryItem(name: "count", value: "30")
+            ]
+        )
+    }
+    
+    static func searchImages(with keyWord: String, page: Int) -> Self {
+        Endpoint(
+            path: "/search/photos",
+            queryItems: [
+                URLQueryItem(name: "client_id", value: "SR06pjmvFFAczVYEUE0htljhCG34JbLATNtVP5jrXpA"),
+                URLQueryItem(name: "page", value: "\(page)"),
+                URLQueryItem(name: "query", value: keyWord)
             ]
         )
     }

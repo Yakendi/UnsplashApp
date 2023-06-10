@@ -38,6 +38,7 @@ class NetworkService {
             do {
                 let data = try self.httpResponse(data: data, response: response)
                 let response = try self.decoder.decode(Model.self, from: data)
+                completion(.success(response))
             } catch {
                 completion(.failure(.error(error: error)))
             }
