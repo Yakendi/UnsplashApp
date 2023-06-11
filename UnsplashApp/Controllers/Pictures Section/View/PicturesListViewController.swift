@@ -20,9 +20,11 @@ class PicturesListViewController: UIViewController {
     // MARK: - UI
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        layout.itemSize = CGSize(width: (view.frame.size.width - 40) / 3,
-                                 height: (view.frame.size.width - 40) / 3)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        layout.minimumLineSpacing = 5
+        layout.minimumInteritemSpacing = 5
+        layout.itemSize = CGSize(width: (view.frame.size.width - 20) / 3,
+                                 height: (view.frame.size.width - 30) / 3)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(PicturesListCollectionViewCell.self,
                                 forCellWithReuseIdentifier: PicturesListCollectionViewCell.identifier)

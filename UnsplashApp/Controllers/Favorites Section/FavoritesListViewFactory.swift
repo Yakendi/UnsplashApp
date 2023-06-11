@@ -8,9 +8,8 @@
 import UIKit
 
 struct FavoritesListViewFactory {
-    static func create() -> UIViewController {
+    static func create() -> FavoritesListViewController {
         let controller = FavoritesListViewController()
-        
         return controller
     }
 }

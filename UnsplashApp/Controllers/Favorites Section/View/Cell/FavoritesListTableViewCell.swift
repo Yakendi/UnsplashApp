@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class FavoritesListTableViewCell: UITableViewCell {
+final class FavoritesListTableViewCell: UITableViewCell {
     
     // MARK: - Identifier
     static var identifier: String {
@@ -16,6 +16,7 @@ class FavoritesListTableViewCell: UITableViewCell {
     }
     
     // MARK: - UI
+    // image
     private var pictureImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -24,15 +25,24 @@ class FavoritesListTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    let usernameLabel = UILabel()
-    let instagramUsernameLabel = UILabel()
+    // labels
+    private let usernameLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        return label
+    }()
+    
+    private let instagramUsernameLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemGray
+        return label
+    }()
     
     // MARK: - Constructor
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        setup()
-        configure()
+        setupViews()
     }
     
     required init?(coder: NSCoder) {
@@ -44,38 +54,35 @@ class FavoritesListTableViewCell: UITableViewCell {
     }
     
     // MARK: - Configurator
-    func configure() {
-        pictureImageView.backgroundColor = .systemGray6
-        usernameLabel.text = "Username"
-        instagramUsernameLabel.text = "@Instagram"
+    func configure(_ model: PresentPhotoModel) {
+        
+        // image
+        pictureImageView.kf.setImage(with: URL(string: model.thumbImage))
+        
+        // labels
+        usernameLabel.text = model.userName
+        instagramUsernameLabel.text = model.instagram
     }
 }
 
 // MARK: - Setup views
 private extension FavoritesListTableViewCell {
-    
-    func setup() {
-        setupViews()
-        setupConstraints()
-    }
-    
     func setupViews() {
-        contentView.addSubviews(pictureImageView, usernameLabel, instagramUsernameLabel)
-    }
-    
-    func setupConstraints() {
+        contentView.addSubview(pictureImageView)
         pictureImageView.snp.makeConstraints {
             $0.height.width.equalTo(100)
             $0.leading.top.equalToSuperview().offset(16)
             $0.bottom.equalToSuperview().offset(-16)
         }
         
+        contentView.addSubview(usernameLabel)
         usernameLabel.snp.makeConstraints {
             $0.leading.equalTo(pictureImageView.snp.trailing).offset(16)
             $0.top.equalToSuperview().offset(16)
             $0.trailing.equalToSuperview().offset(-16)
         }
         
+        contentView.addSubview(instagramUsernameLabel)
         instagramUsernameLabel.snp.makeConstraints {
             $0.leading.equalTo(pictureImageView.snp.trailing).offset(16)
             $0.top.equalTo(usernameLabel.snp.bottom).offset(8)

@@ -136,8 +136,8 @@
 		C65F000029D8724400A8CFDC /* Pictures Section */ = {
 			isa = PBXGroup;
 			children = (
-				C65F000129D8731400A8CFDC /* PicturesListViewFactory.swift */,
 				C65F000429D8767C00A8CFDC /* PicturesCoordinator.swift */,
+				C65F000129D8731400A8CFDC /* PicturesListViewFactory.swift */,
 				C65F000329D8731F00A8CFDC /* View */,
 			);
 			path = "Pictures Section";
@@ -155,8 +155,8 @@
 		C65F000629D87FBA00A8CFDC /* Favorites Section */ = {
 			isa = PBXGroup;
 			children = (
-				C65F000829D8801600A8CFDC /* FavoritesListViewFactory.swift */,
 				C65F000A29D8802900A8CFDC /* FavoritesCoordinator.swift */,
+				C65F000829D8801600A8CFDC /* FavoritesListViewFactory.swift */,
 				C65F000729D87FD400A8CFDC /* View */,
 			);
 			path = "Favorites Section";

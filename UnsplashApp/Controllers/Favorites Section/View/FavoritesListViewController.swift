@@ -9,12 +9,20 @@ import UIKit
 
 class FavoritesListViewController: UIViewController {
     
+    // MARK: - Public
+    weak var delegate: Presenter?
+    
+    // MARK: - Private
+    private let photoGalleryManager = PhotoGalleryManager.shared
+    
     // MARK: - UI
     private var tableView: UITableView = {
         let tableView = UITableView()
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(FavoritesListTableViewCell.self,
-                           forCellReuseIdentifier: FavoritesListTableViewCell.identifier)
+        tableView.register(
+            FavoritesListTableViewCell.self,
+            forCellReuseIdentifier: FavoritesListTableViewCell.identifier
+        )
         return tableView
     }()
     
@@ -22,7 +30,10 @@ class FavoritesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setup()
+        view.backgroundColor = .systemBackground
+        navigationItem.title = "Favorites"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        setupViews()
     }
 
 }
@@ -30,35 +41,48 @@ class FavoritesListViewController: UIViewController {
 // MARK: - Setup views
 private extension FavoritesListViewController {
     
-    func setup() {
-        setupViews()
-        setupConstraints()
-    }
-    
     func setupViews() {
-        view.addSubviews(tableView)
-        view.backgroundColor = .systemBackground
-        navigationItem.title = "Favorites"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        tableView.dataSource = self
-        tableView.delegate = self
-    }
-    
-    func setupConstraints() {
+        view.addSubview(tableView)
         tableView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 }
+
 // MARK: - Table view data source and delegate
 extension FavoritesListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
+        photoGalleryManager.favoritesArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FavoritesListTableViewCell.identifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: FavoritesListTableViewCell.identifier,
+            for: indexPath
+        ) as! FavoritesListTableViewCell
+        let model = photoGalleryManager.favoritesArray[indexPath.row]
+        cell.configure(model)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        var pictureDetail = photoGalleryManager.favoritesArray[indexPath.row]
+        let selectedPicture = photoGalleryManager.favoritesArray.contains {
+            return $0 == pictureDetail
+        }
+        pictureDetail.isFavorite = selectedPicture
+        delegate?.presentPhoto(with: pictureDetail)
+    }
+}
+
+// MARK: - Update list
+extension FavoritesListViewController: PhotoGalleryManagerDelegate {
+    func updateFavoritesList() {
+        self.tableView.reloadData()
     }
 }

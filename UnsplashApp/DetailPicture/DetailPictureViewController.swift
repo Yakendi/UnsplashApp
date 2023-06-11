@@ -55,6 +55,7 @@ class DetailPictureViewController: UIViewController {
         button.layer.cornerRadius = 10
         button.backgroundColor = .systemPink
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        button.addTarget(self, action: #selector(addToFavorites), for: .touchUpInside)
         return button
     }()
     
