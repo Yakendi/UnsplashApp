@@ -14,6 +14,9 @@ class DetailPictureViewController: UIViewController {
     // MARK: - Public
     var model: PresentPhotoModel!
     
+    // MARK: - Private
+    private let photoGalleryManager = PhotoGalleryManager.shared
+    
     // MARK: - UI
     // images
     private var pictureImageView: UIImageView = {
@@ -51,7 +54,6 @@ class DetailPictureViewController: UIViewController {
         let button = UIButton()
         button.layer.cornerRadius = 10
         button.backgroundColor = .systemPink
-        button.setTitle("Press", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         return button
     }()
@@ -89,11 +91,29 @@ class DetailPictureViewController: UIViewController {
         // labels
         usernameLabel.text = model.userName
         instagramUsername.text = "@\(model.instagram)"
+        
+        // buttons
+        let actionButtonTitle = model.isFavorite ? "Remove from favorites" : "Add to favorites"
+        actionButton.setTitle(actionButtonTitle, for: .normal)
     }
     
     // MARK: - Button method
     @objc func dismissViewController() {
         dismiss(animated: true)
+    }
+    
+    @objc func addToFavorites() {
+        if model.isFavorite {
+            photoGalleryManager.deleteFromFavorites(model, isNeedReload: true)
+            actionButton.setTitle("Add to favorites", for: .normal)
+            actionButton.zoomIn()
+            model.isFavorite = false
+        } else {
+            photoGalleryManager.addToFavorites(model)
+            actionButton.setTitle("Remove from favorites", for: .normal)
+            actionButton.zoomIn()
+            model.isFavorite = true
+        }
     }
 }
 
@@ -103,6 +123,7 @@ private extension DetailPictureViewController {
     func setupViews() {
         view.backgroundColor = .systemBackground
         
+        // images
         view.addSubviews(pictureImageView)
         pictureImageView.snp.makeConstraints {
             $0.leading.top.trailing.equalToSuperview()
@@ -111,11 +132,12 @@ private extension DetailPictureViewController {
         
         view.addSubview(profileImageView)
         profileImageView.snp.makeConstraints {
-            $0.width.height.equalTo(80)
+            $0.width.height.equalTo(90)
             $0.leading.equalToSuperview().offset(20)
             $0.top.equalTo(pictureImageView.snp.bottom).offset(20)
         }
         
+        // labels
         view.addSubview(usernameLabel)
         usernameLabel.snp.makeConstraints {
             $0.leading.equalTo(profileImageView.snp.trailing).offset(10)
@@ -130,10 +152,11 @@ private extension DetailPictureViewController {
             $0.trailing.equalToSuperview().offset(-16)
         }
         
+        // buttons
         view.addSubview(actionButton)
         actionButton.snp.makeConstraints {
-            $0.width.equalTo(250)
-            $0.height.equalTo(55)
+            $0.width.equalTo(260)
+            $0.height.equalTo(60)
             $0.centerX.equalToSuperview()
             $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-10)
         }

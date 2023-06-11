@@ -13,4 +13,16 @@ extension UIView {
             addSubview($0)
         }
     }
+    
+    func zoomIn(duration: TimeInterval = 0.12) {
+        self.transform = CGAffineTransform(scaleX: 1.02, y: 1.02)
+        UIView.animate(withDuration: duration,
+                       delay: 0.08,
+                       usingSpringWithDamping: 1.5,
+                       initialSpringVelocity: 0,
+                       options: .curveEaseInOut) { [weak self] in
+            guard let self = self else { return }
+            self.transform = .identity
+        }
+    }
 }
