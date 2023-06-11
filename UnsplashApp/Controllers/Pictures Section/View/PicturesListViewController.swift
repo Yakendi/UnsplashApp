@@ -31,15 +31,20 @@ final class PicturesListViewController: UIViewController {
         return collectionView
     }()
     
-    private var searchBar: UISearchBar = {
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshList), for: .valueChanged)
+        return refreshControl
+    }()
+    
+    private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
-        searchBar.searchBarStyle = .minimal
-        searchBar.backgroundColor = .systemBackground
+        searchBar.backgroundColor = .clear
         searchBar.placeholder = "Search"
         return searchBar
     }()
     
-    private var activityIndicator = UIActivityIndicatorView()
+    private let activityIndicator = UIActivityIndicatorView()
     
     // MARK: - Constructor
     override func viewDidLoad() {
@@ -62,6 +67,13 @@ final class PicturesListViewController: UIViewController {
             }
         }
     }
+    
+    //MARK: - Collection view refresh
+    @objc private func refreshList() {
+        self.getImages()
+        self.collectionView.reloadData()
+        self.refreshControl.endRefreshing()
+    }
 }
 
 // MARK: - Setup views
@@ -70,17 +82,18 @@ private extension PicturesListViewController {
     func setupViews() {
         view.backgroundColor = .systemBackground
         view.addSubviews(collectionView)
+        collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        collectionView.addSubview(refreshControl)
         
         view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
         activityIndicator.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
-        activityIndicator.startAnimating()
         
         navigationItem.titleView = searchBar
     }

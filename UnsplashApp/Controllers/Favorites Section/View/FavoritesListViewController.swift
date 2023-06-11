@@ -23,6 +23,7 @@ final class FavoritesListViewController: UIViewController {
             FavoritesListTableViewCell.self,
             forCellReuseIdentifier: FavoritesListTableViewCell.identifier
         )
+        tableView.separatorStyle = .none
         return tableView
     }()
     
@@ -32,7 +33,7 @@ final class FavoritesListViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         navigationItem.title = "Favorites"
-        navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationController?.navigationBar.prefersLargeTitles = true
         setupViews()
     }
 

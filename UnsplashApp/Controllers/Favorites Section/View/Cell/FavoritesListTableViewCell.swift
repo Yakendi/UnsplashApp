@@ -21,7 +21,7 @@ final class FavoritesListTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 4
+        imageView.layer.cornerRadius = 2
         return imageView
     }()
     
@@ -34,6 +34,7 @@ final class FavoritesListTableViewCell: UITableViewCell {
     
     private let instagramUsernameLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .systemGray
         return label
     }()
@@ -43,6 +44,7 @@ final class FavoritesListTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupViews()
+        self.selectionStyle = .none
     }
     
     required init?(coder: NSCoder) {
@@ -61,7 +63,7 @@ final class FavoritesListTableViewCell: UITableViewCell {
         
         // labels
         usernameLabel.text = model.userName
-        instagramUsernameLabel.text = model.instagram
+        instagramUsernameLabel.text = "@\(model.instagram)"
     }
 }
 
@@ -70,23 +72,24 @@ private extension FavoritesListTableViewCell {
     func setupViews() {
         contentView.addSubview(pictureImageView)
         pictureImageView.snp.makeConstraints {
-            $0.height.width.equalTo(100)
+            $0.width.equalTo(170)
+            $0.height.equalTo(210)
             $0.leading.top.equalToSuperview().offset(16)
-            $0.bottom.equalToSuperview().offset(-16)
+            $0.bottom.equalToSuperview()
         }
         
         contentView.addSubview(usernameLabel)
         usernameLabel.snp.makeConstraints {
-            $0.leading.equalTo(pictureImageView.snp.trailing).offset(16)
-            $0.top.equalToSuperview().offset(16)
-            $0.trailing.equalToSuperview().offset(-16)
+            $0.leading.equalTo(pictureImageView.snp.trailing).offset(12)
+            $0.top.equalTo(pictureImageView.snp.top).offset(5)
+            $0.trailing.equalToSuperview().offset(-12)
         }
         
         contentView.addSubview(instagramUsernameLabel)
         instagramUsernameLabel.snp.makeConstraints {
-            $0.leading.equalTo(pictureImageView.snp.trailing).offset(16)
-            $0.top.equalTo(usernameLabel.snp.bottom).offset(8)
-            $0.trailing.equalToSuperview().offset(-16)
+            $0.leading.equalTo(usernameLabel.snp.leading)
+            $0.top.equalTo(usernameLabel.snp.bottom).offset(3)
+            $0.trailing.equalTo(usernameLabel.snp.trailing)
         }
     }
 }
