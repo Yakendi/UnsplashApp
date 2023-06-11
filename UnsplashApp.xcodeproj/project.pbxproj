@@ -40,8 +40,8 @@
 		C6A1E1CA2A3474B300BD5B9E /* PhotoGalleryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1E1C92A3474B300BD5B9E /* PhotoGalleryManager.swift */; };
 		C6A1E1D22A35BAAF00BD5B9E /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1E1D12A35BAAF00BD5B9E /* DataBaseManager.swift */; };
 		C6A1E1D52A35BB0300BD5B9E /* PicturesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C6A1E1D32A35BB0300BD5B9E /* PicturesModel.xcdatamodeld */; };
-		C6A1E1E42A35C19900BD5B9E /* PresentPhotoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1E1E22A35C19900BD5B9E /* PresentPhotoEntity+CoreDataClass.swift */; };
-		C6A1E1E52A35C19900BD5B9E /* PresentPhotoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1E1E32A35C19900BD5B9E /* PresentPhotoEntity+CoreDataProperties.swift */; };
+		C6A1E1E72A35C46800BD5B9E /* PresentPhotoEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1E1E62A35C46800BD5B9E /* PresentPhotoEntity+CoreDataClass.swift */; };
+		C6A1E1E92A35C47E00BD5B9E /* PresentPhotoEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1E1E82A35C47E00BD5B9E /* PresentPhotoEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,8 +82,8 @@
 		C6A1E1C92A3474B300BD5B9E /* PhotoGalleryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryManager.swift; sourceTree = "<group>"; };
 		C6A1E1D12A35BAAF00BD5B9E /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		C6A1E1D42A35BB0300BD5B9E /* PicturesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PicturesModel.xcdatamodel; sourceTree = "<group>"; };
-		C6A1E1E22A35C19900BD5B9E /* PresentPhotoEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PresentPhotoEntity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		C6A1E1E32A35C19900BD5B9E /* PresentPhotoEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PresentPhotoEntity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		C6A1E1E62A35C46800BD5B9E /* PresentPhotoEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PresentPhotoEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C6A1E1E82A35C47E00BD5B9E /* PresentPhotoEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PresentPhotoEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,8 +313,8 @@
 		C6A1E1D02A35BA8D00BD5B9E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C6A1E1E22A35C19900BD5B9E /* PresentPhotoEntity+CoreDataClass.swift */,
-				C6A1E1E32A35C19900BD5B9E /* PresentPhotoEntity+CoreDataProperties.swift */,
+				C6A1E1E62A35C46800BD5B9E /* PresentPhotoEntity+CoreDataClass.swift */,
+				C6A1E1E82A35C47E00BD5B9E /* PresentPhotoEntity+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -442,8 +442,8 @@
 				C6A1E1D52A35BB0300BD5B9E /* PicturesModel.xcdatamodeld in Sources */,
 				C604482929DC39B2004A8F0E /* Presenter.swift in Sources */,
 				C604482029D9C12C004A8F0E /* NetworkErrorTypes.swift in Sources */,
-				C6A1E1E52A35C19900BD5B9E /* PresentPhotoEntity+CoreDataProperties.swift in Sources */,
 				C65F000D29D8804D00A8CFDC /* FavoritesListViewController.swift in Sources */,
+				C6A1E1E92A35C47E00BD5B9E /* PresentPhotoEntity+CoreDataProperties.swift in Sources */,
 				C65FFFFD29D86B2B00A8CFDC /* AppCoordinator.swift in Sources */,
 				C65F001129D8B13700A8CFDC /* PicturesListCollectionViewCell.swift in Sources */,
 				C65F001729D8BE5300A8CFDC /* UnsplashModel.swift in Sources */,
@@ -459,11 +459,11 @@
 				C65F001A29D8BEAE00A8CFDC /* ImageURLs.swift in Sources */,
 				C65FFFE529D83C3600A8CFDC /* SceneDelegate.swift in Sources */,
 				C65F001E29D8BEE100A8CFDC /* LocationModel.swift in Sources */,
-				C6A1E1E42A35C19900BD5B9E /* PresentPhotoEntity+CoreDataClass.swift in Sources */,
 				C65F000529D8767C00A8CFDC /* PicturesCoordinator.swift in Sources */,
 				C604481929D9ADEF004A8F0E /* FavoritesListTableViewCell.swift in Sources */,
 				C65F002029D8BF0100A8CFDC /* ProfileImageModel.swift in Sources */,
 				C604482229D9C536004A8F0E /* String + extensions.swift in Sources */,
+				C6A1E1E72A35C46800BD5B9E /* PresentPhotoEntity+CoreDataClass.swift in Sources */,
 				C604481E29D9C11D004A8F0E /* NetworkEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

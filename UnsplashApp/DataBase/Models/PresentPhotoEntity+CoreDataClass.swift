@@ -1,9 +1,8 @@
 //
-//  PresentPhotoEntity+CoreDataClass.swift
+//  File.swift
 //  UnsplashApp
 //
 //  Created by Аслан Микалаев on 11.06.2023.
-//
 //
 
 import Foundation
