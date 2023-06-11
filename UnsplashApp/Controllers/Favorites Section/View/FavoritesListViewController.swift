@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoritesListViewController: UIViewController {
+final class FavoritesListViewController: UIViewController {
     
     // MARK: - Public
     weak var delegate: Presenter?
@@ -77,6 +77,21 @@ extension FavoritesListViewController: UITableViewDataSource, UITableViewDelegat
         }
         pictureDetail.isFavorite = selectedPicture
         delegate?.presentPhoto(with: pictureDetail)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Remove") { _, _, _ in
+
+            // Удаление модели из массив
+            let selectedPicture = self.photoGalleryManager.favoritesArray[indexPath.row]
+            self.photoGalleryManager.deleteFromFavorites(selectedPicture, isNeedReload: false)
+
+            // Удаления ячейки из таблицы
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+
+        let swipe = UISwipeActionsConfiguration(actions: [delete])
+        return swipe
     }
 }
 

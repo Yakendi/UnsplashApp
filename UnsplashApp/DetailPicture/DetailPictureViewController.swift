@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class DetailPictureViewController: UIViewController {
+final class DetailPictureViewController: UIViewController {
     
     // MARK: - Public
     var model: PresentPhotoModel!

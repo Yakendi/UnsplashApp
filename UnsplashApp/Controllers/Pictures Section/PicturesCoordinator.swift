@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PicturesCoordinator: Coordinator {
+final class PicturesCoordinator: Coordinator {
     
     // MARK: - Public properties
     var navigationController: UINavigationController

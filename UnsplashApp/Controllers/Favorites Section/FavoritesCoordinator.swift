@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoritesCoordinator: Coordinator {
+final class FavoritesCoordinator: Coordinator {
     
     // MARK: - Public properties
     var navigationController: UINavigationController

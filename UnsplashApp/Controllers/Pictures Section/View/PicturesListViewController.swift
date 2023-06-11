@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class PicturesListViewController: UIViewController {
+final class PicturesListViewController: UIViewController {
     
     // MARK: - Public
     var unsplashData: [ImageURLs] = []

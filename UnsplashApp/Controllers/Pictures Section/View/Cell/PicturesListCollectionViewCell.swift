@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Kingfisher
 
-class PicturesListCollectionViewCell: UICollectionViewCell {
+final class PicturesListCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Identifier
     static var identifier: String {
