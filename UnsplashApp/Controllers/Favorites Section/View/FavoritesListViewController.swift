@@ -48,6 +48,7 @@ private extension FavoritesListViewController {
         }
         tableView.dataSource = self
         tableView.delegate = self
+        photoGalleryManager.delegate = self
     }
 }
 

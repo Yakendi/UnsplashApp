@@ -25,16 +25,24 @@ final class PhotoGalleryManager {
     
     // MARK: - Private properties
     private let network = ServiceFactory.shared
+    private let storageManager = DataBaseManager()
+    
+    // MARK: - Constructor
+    init() {
+        favoritesArray = storageManager.fetchFavoritesArray()
+    }
     
     // MARK: - Update favorites list
     func addToFavorites(_ model: PresentPhotoModel) {
         self.favoritesArray.append(model)
         self.delegate?.updateFavoritesList()
+        self.storageManager.saveFavoritesModel(model)
     }
     
     func deleteFromFavorites(_ model: PresentPhotoModel, isNeedReload: Bool) {
         let filteredArray = self.favoritesArray.filter { $0 != model }
         self.favoritesArray = filteredArray
+        self.storageManager.removeFromFavoritesModel(model)
         
         if isNeedReload {
             self.delegate?.updateFavoritesList()
