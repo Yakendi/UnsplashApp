@@ -19,13 +19,13 @@ final class PhotoGalleryManager {
     static let shared = PhotoGalleryManager()
     
     // MARK: - Public properties
-    var presentPhotoArray: [PresentPhotoModel] = []
-    var favoritesArray: [PresentPhotoModel] = []
     weak var delegate: PhotoGalleryManagerDelegate?
     
     // MARK: - Private properties
     private let network = ServiceFactory.shared
     private let storageManager = DataBaseManager()
+    private(set) var presentPhotoArray: [PresentPhotoModel] = []
+    private(set) var favoritesArray: [PresentPhotoModel] = []
     
     // MARK: - Constructor
     init() {
@@ -34,15 +34,14 @@ final class PhotoGalleryManager {
     
     // MARK: - Update favorites list
     func addToFavorites(_ model: PresentPhotoModel) {
-        self.favoritesArray.append(model)
-        self.delegate?.updateFavoritesList()
-        self.storageManager.saveFavoritesModel(model)
+        favoritesArray.append(model)
+        delegate?.updateFavoritesList()
+        storageManager.saveFavoritesModel(model)
     }
     
     func deleteFromFavorites(_ model: PresentPhotoModel, isNeedReload: Bool) {
-        let filteredArray = self.favoritesArray.filter { $0 != model }
-        self.favoritesArray = filteredArray
-        self.storageManager.removeFromFavoritesModel(model)
+        favoritesArray.removeAll { $0 == model }
+        storageManager.removeFromFavoritesModel(model)
         
         if isNeedReload {
             self.delegate?.updateFavoritesList()
@@ -76,18 +75,4 @@ final class PhotoGalleryManager {
             }
         }
     }
-    
-//    func searchImagesList(with keyWord: String, page: Int, completion: @escaping ImagesCompletion) {
-//        network.searchImages(with: keyWord, page: page) { [weak self] result in
-//            guard let self = self else { return }
-//            
-//            switch result {
-//            case .success(let response):
-//                downloadImages(response)
-//                completion(response.map { $0.urls })
-//            case .failure(_):
-//                print(NetworkErrorTypes.emptyData)
-//            }
-//        }
-//    }
 }

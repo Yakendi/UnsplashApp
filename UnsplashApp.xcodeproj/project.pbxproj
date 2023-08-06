@@ -15,6 +15,8 @@
 		C604482229D9C536004A8F0E /* String + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604482129D9C536004A8F0E /* String + extensions.swift */; };
 		C604482529DC26EA004A8F0E /* DetailPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604482429DC26EA004A8F0E /* DetailPictureViewController.swift */; };
 		C604482929DC39B2004A8F0E /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C604482829DC39B2004A8F0E /* Presenter.swift */; };
+		C648001D2A7FDCAC0085ADFA /* UITableView + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C648001C2A7FDCAC0085ADFA /* UITableView + extensions.swift */; };
+		C648001F2A7FDCC70085ADFA /* UICollectionView + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C648001E2A7FDCC70085ADFA /* UICollectionView + extensions.swift */; };
 		C65F000229D8731400A8CFDC /* PicturesListViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F000129D8731400A8CFDC /* PicturesListViewFactory.swift */; };
 		C65F000529D8767C00A8CFDC /* PicturesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F000429D8767C00A8CFDC /* PicturesCoordinator.swift */; };
 		C65F000929D8801600A8CFDC /* FavoritesListViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F000829D8801600A8CFDC /* FavoritesListViewFactory.swift */; };
@@ -55,6 +57,8 @@
 		C604482129D9C536004A8F0E /* String + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + extensions.swift"; sourceTree = "<group>"; };
 		C604482429DC26EA004A8F0E /* DetailPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPictureViewController.swift; sourceTree = "<group>"; };
 		C604482829DC39B2004A8F0E /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		C648001C2A7FDCAC0085ADFA /* UITableView + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + extensions.swift"; sourceTree = "<group>"; };
+		C648001E2A7FDCC70085ADFA /* UICollectionView + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView + extensions.swift"; sourceTree = "<group>"; };
 		C65F000129D8731400A8CFDC /* PicturesListViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesListViewFactory.swift; sourceTree = "<group>"; };
 		C65F000429D8767C00A8CFDC /* PicturesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesCoordinator.swift; sourceTree = "<group>"; };
 		C65F000829D8801600A8CFDC /* FavoritesListViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewFactory.swift; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 			children = (
 				C65F001329D8B48700A8CFDC /* UIView + extensions.swift */,
 				C604482129D9C536004A8F0E /* String + extensions.swift */,
+				C648001C2A7FDCAC0085ADFA /* UITableView + extensions.swift */,
+				C648001E2A7FDCC70085ADFA /* UICollectionView + extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -446,6 +452,8 @@
 				C6A1E1E92A35C47E00BD5B9E /* PresentPhotoEntity+CoreDataProperties.swift in Sources */,
 				C65FFFFD29D86B2B00A8CFDC /* AppCoordinator.swift in Sources */,
 				C65F001129D8B13700A8CFDC /* PicturesListCollectionViewCell.swift in Sources */,
+				C648001D2A7FDCAC0085ADFA /* UITableView + extensions.swift in Sources */,
+				C648001F2A7FDCC70085ADFA /* UICollectionView + extensions.swift in Sources */,
 				C65F001729D8BE5300A8CFDC /* UnsplashModel.swift in Sources */,
 				C65F000B29D8802900A8CFDC /* FavoritesCoordinator.swift in Sources */,
 				C6A1E1D22A35BAAF00BD5B9E /* DataBaseManager.swift in Sources */,

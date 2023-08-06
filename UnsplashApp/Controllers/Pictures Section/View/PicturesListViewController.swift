@@ -26,8 +26,7 @@ final class PicturesListViewController: UIViewController {
         layout.itemSize = CGSize(width: (view.frame.size.width - 20) / 3,
                                  height: (view.frame.size.width - 30) / 3)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(PicturesListCollectionViewCell.self,
-                                forCellWithReuseIdentifier: PicturesListCollectionViewCell.identifier)
+        collectionView.register(PicturesListCollectionViewCell.self)
         return collectionView
     }()
     
@@ -107,7 +106,7 @@ extension PicturesListViewController: UICollectionViewDataSource, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PicturesListCollectionViewCell.identifier, for: indexPath) as! PicturesListCollectionViewCell
+        let cell = collectionView.dequeue(PicturesListCollectionViewCell.self, indexPath: indexPath)
         cell.backgroundColor = .systemGray6
         let model = unsplashData[indexPath.row]
         cell.configure(model)

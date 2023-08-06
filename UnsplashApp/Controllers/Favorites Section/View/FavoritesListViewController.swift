@@ -18,11 +18,7 @@ final class FavoritesListViewController: UIViewController {
     // MARK: - UI
     private var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(
-            FavoritesListTableViewCell.self,
-            forCellReuseIdentifier: FavoritesListTableViewCell.identifier
-        )
+        tableView.register(FavoritesListTableViewCell.self)
         tableView.separatorStyle = .none
         return tableView
     }()
@@ -33,7 +29,6 @@ final class FavoritesListViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         navigationItem.title = "Favorites"
-//        navigationController?.navigationBar.prefersLargeTitles = true
         setupViews()
     }
 
@@ -61,10 +56,7 @@ extension FavoritesListViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: FavoritesListTableViewCell.identifier,
-            for: indexPath
-        ) as! FavoritesListTableViewCell
+        let cell = tableView.dequeue(FavoritesListTableViewCell.self, indexPath: indexPath)
         let model = photoGalleryManager.favoritesArray[indexPath.row]
         cell.configure(model)
         return cell
