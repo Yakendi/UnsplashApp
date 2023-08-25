@@ -10,30 +10,25 @@ import CoreData
 
 final class DataBaseManager: NSObject {
     
+    // MARK: - Private
     private var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "PicturesModel")
         container.loadPersistentStores { storeDescription, error in
             if let error = error as NSError? {
                 fatalError("Unresilved error \(error), \(error.userInfo)")
             }
-            print("Core Data stack has been initialized with description: \(storeDescription)")
         }
         
         return container
     }()
     
+    private let request: NSFetchRequest<PresentPhotoEntity> = PresentPhotoEntity.fetchRequest()
     
-    // MARK: - Constructor
-    override init() {
-        
-    }
-    
+    // MARK: - Storage
     func fetchFavoritesArray() -> [PresentPhotoModel] {
         var array: [PresentPhotoModel] = []
         
         let viewContext = persistentContainer.viewContext
-        
-        let request: NSFetchRequest<PresentPhotoEntity> = PresentPhotoEntity.fetchRequest()
         
         do {
             let takedData = try viewContext.fetch(request)
@@ -74,13 +69,11 @@ final class DataBaseManager: NSObject {
     
     func removeFromFavoritesModel(_ model: PresentPhotoModel) {
         let viewContext = persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<PresentPhotoEntity> = PresentPhotoEntity.fetchRequest()
         let predicate = NSPredicate(format: "id like %@", model.id)
-        fetchRequest.predicate = predicate
-        fetchRequest.fetchLimit = 1
+        request.predicate = predicate
         
         do {
-            let objects = try viewContext.fetch(fetchRequest)
+            let objects = try viewContext.fetch(request)
             for object in objects {
                 viewContext.delete(object)
             }
@@ -88,7 +81,5 @@ final class DataBaseManager: NSObject {
         } catch {
             print(error.localizedDescription)
         }
-        
     }
-
 }
