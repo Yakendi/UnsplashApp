@@ -49,7 +49,7 @@ final class PhotoGalleryManager {
     }
     
     // MARK: - Network
-    func downloadData(_ response: [UnsplashModel]) {
+    private func downloadData(_ response: [UnsplashModel]) {
         self.presentPhotoArray = response.map({ item -> PresentPhotoModel in
             return PresentPhotoModel(
                 id: item.id,

@@ -11,7 +11,7 @@ import CoreData
 final class DataBaseManager: NSObject {
     
     // MARK: - Private
-    private var persistentContainer: NSPersistentContainer = {
+    private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "PicturesModel")
         container.loadPersistentStores { storeDescription, error in
             if let error = error as NSError? {
@@ -21,15 +21,16 @@ final class DataBaseManager: NSObject {
         
         return container
     }()
-    
+
+    private var viewContext: NSManagedObjectContext {
+        return persistentContainer.viewContext
+    }
     private let request: NSFetchRequest<PresentPhotoEntity> = PresentPhotoEntity.fetchRequest()
     
     // MARK: - Storage
     func fetchFavoritesArray() -> [PresentPhotoModel] {
         var array: [PresentPhotoModel] = []
-        
-        let viewContext = persistentContainer.viewContext
-        
+                
         do {
             let takedData = try viewContext.fetch(request)
             array = takedData.map {
@@ -50,7 +51,6 @@ final class DataBaseManager: NSObject {
     }
     
     func saveFavoritesModel(_ model: PresentPhotoModel) {
-        let viewContext = persistentContainer.viewContext
         let toSaveEntity = PresentPhotoEntity(context: viewContext)
         toSaveEntity.id = model.id
         toSaveEntity.image = model.image
@@ -68,7 +68,6 @@ final class DataBaseManager: NSObject {
     }
     
     func removeFromFavoritesModel(_ model: PresentPhotoModel) {
-        let viewContext = persistentContainer.viewContext
         let predicate = NSPredicate(format: "id like %@", model.id)
         request.predicate = predicate
         

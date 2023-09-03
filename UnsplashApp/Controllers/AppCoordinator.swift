@@ -10,7 +10,7 @@ import UIKit
 final class AppCoordinator: Coordinator {
     
     // MARK: - Public properties
-    var window: UIWindow
+    let window: UIWindow
     var navigationController = UINavigationController()
     
     // MARK: - Constructor

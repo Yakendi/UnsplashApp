@@ -15,8 +15,4 @@ struct PresentPhotoModel: Equatable {
     let userName: String
     let instagram: String
     var isFavorite: Bool = false
-    
-    static func == (lhs: PresentPhotoModel, rhs: PresentPhotoModel) -> Bool {
-        return lhs.id == rhs.id
-    }
 }

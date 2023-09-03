@@ -9,7 +9,7 @@ import Foundation
 
 typealias Handler<T: Codable> = (Result<T, NetworkErrorTypes>) -> Void
 
-class NetworkService {
+final class NetworkService {
     
     typealias Completion = (Data?, URLResponse?, Error?) -> Void
     

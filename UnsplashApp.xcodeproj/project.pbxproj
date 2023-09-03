@@ -244,10 +244,8 @@
 				C6A1E1CF2A35BA4600BD5B9E /* DataBase */,
 				C65FFFF929D852AA00A8CFDC /* Core */,
 				C65FFFF829D84D2300A8CFDC /* Controllers */,
-				C604482329DC26B4004A8F0E /* DetailPicture */,
 				C65FFFF729D84CD800A8CFDC /* Resources */,
 				C65F001229D8B46200A8CFDC /* Extensions */,
-				C65FFFF029D83C3700A8CFDC /* Info.plist */,
 			);
 			path = UnsplashApp;
 			sourceTree = "<group>";
@@ -267,6 +265,7 @@
 				C65FFFEB29D83C3700A8CFDC /* Assets.xcassets */,
 				C65FFFED29D83C3700A8CFDC /* LaunchScreen.storyboard */,
 				C6A1E1D32A35BB0300BD5B9E /* PicturesModel.xcdatamodeld */,
+				C65FFFF029D83C3700A8CFDC /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -279,6 +278,7 @@
 				C65FFFFE29D86D0D00A8CFDC /* TabBarController.swift */,
 				C65F000029D8724400A8CFDC /* Pictures Section */,
 				C65F000629D87FBA00A8CFDC /* Favorites Section */,
+				C604482329DC26B4004A8F0E /* DetailPicture */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -613,7 +613,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = UnsplashApp/Info.plist;
+				INFOPLIST_FILE = UnsplashApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -640,7 +640,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = UnsplashApp/Info.plist;
+				INFOPLIST_FILE = UnsplashApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
